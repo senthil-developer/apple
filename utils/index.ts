@@ -2,15 +2,6 @@ import hero from "@/public/assets/images/hero.jpeg";
 
 export const heroImg = hero;
 
-import hmv from "@/public/assets/videos/hero.mp4";
-import smallmv from "@/public/assets/videos/smallHero.mp4";
-import highlightFirstmv from "@/public/assets/videos/highlightFirst.mp4";
-import highlightSectmv from "@/public/assets/videos/highlightSecond.mp4";
-import highlightThirdmv from "@/public/assets/videos/highlightThird.mp4";
-import highlightFourthmv from "@/public/assets/videos/highlightFourth.mp4";
-import exploremv from "@/public/assets/videos/explore.mp4";
-import framemv from "@/public/assets/videos/frame.mp4";
-
 import apple from "@/public/assets/images/apple.svg";
 import search from "@/public/assets/images/search.svg";
 import bag from "@/public/assets/images/bag.svg";
@@ -29,14 +20,14 @@ import explore2 from "@/public/assets/images/explore2.jpg";
 import chip from "@/public/assets/images/chip.jpeg";
 import frame from "@/public/assets/images/frame.png";
 
-export const heroVideo = hmv;
-export const smallHeroVideo = smallmv;
-export const highlightFirstVideo = highlightFirstmv;
-export const highlightSecondVideo = highlightSectmv;
-export const highlightThirdVideo = highlightThirdmv;
-export const highlightFourthVideo = highlightFourthmv;
-export const exploreVideo = exploremv;
-export const frameVideo = framemv;
+export const heroVideo = "/assets/videos/hero.mp4";
+export const smallHeroVideo = "/assets/videos/smallHero.mp4";
+export const highlightFirstVideo = "/assets/videos/highlight-first.mp4";
+export const highlightSecondVideo = "/assets/videos/hightlight-sec.mp4";
+export const highlightThirdVideo = "/assets/videos/hightlight-third.mp4";
+export const highlightFourthVideo = "/assets/videos/hightlight-fourth.mp4";
+export const exploreVideo = "/assets/videos/explore.mp4";
+export const frameVideo = "/assets/videos/frame.mp4";
 
 export const appleImg = apple;
 export const searchImg = search;
