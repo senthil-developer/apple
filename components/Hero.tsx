@@ -7,15 +7,46 @@ import Link from "next/link";
 type Props = {};
 
 const Hero = (props: Props) => {
+  const [videoSrc, setVideoSrc] = useState(heroVideo);
+
+  const handleVideoSrcSet = () => {
+    if (window.innerWidth < 760) {
+      setVideoSrc(smallHeroVideo);
+    } else {
+      setVideoSrc(heroVideo);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleVideoSrcSet);
+
+    return () => {
+      window.removeEventListener("resize", handleVideoSrcSet);
+    };
+  }, [videoSrc]);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      "#cta",
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+      },
+    );
+  }, []);
+
   useGSAP(() => {
     gsap.to(".hero-title", {
-      duration: 1,
       delay: 2,
       opacity: 1,
     });
     gsap.to("#cta", {
       y: -50,
-      duration: 1,
       delay: 2,
       opacity: 1,
     });
@@ -25,22 +56,15 @@ const Hero = (props: Props) => {
     <section className="nav-height relative w-full bg-black">
       <div className="flex-center h-5/6 w-full flex-col">
         <p className="hero-title">Iphone 15 pro</p>
-        <div className="w-9/12 md:w-10/12">
+        <div className=" w-9/12 md:w-10/12">
           <video
+            className="pointer-events-none"
             autoPlay
             muted
             playsInline
-            className=" pointer-events-none block md:hidden"
+            key={videoSrc}
           >
-            <source src={smallHeroVideo} type="video/mp4" />
-          </video>
-          <video
-            autoPlay
-            muted
-            playsInline
-            className=" pointer-events-none hidden md:flex"
-          >
-            <source src={heroVideo} type="video/mp4" />
+            <source src={videoSrc} type="video/mp4" />
           </video>
         </div>
       </div>
