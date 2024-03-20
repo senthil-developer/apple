@@ -4,7 +4,7 @@ import { rightImg, watchImg } from "@/utils";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
-import VideoCarousel from "./VideoCarousel";
+import VideoCarousel from "./Videocarousel";
 
 type Props = {};
 
